@@ -43,6 +43,17 @@ joe.electionResults[4] = 38;
 bernie.electionResults[43] = 11;
 joe.electionResults[43] = 27;
 
+// Determine winner of individual state
+var setStateResults = function(state) {
+    theStates[state].winner = null;
+    if (bernie.electionResults[state] > joe.electionResults[state]) {
+        theStates[state].winner = bernie;
+    } else if (joe.electionResults[state] > bernie.electionResults[state]) {
+        theStates[state].winner = joe;
+    }
+}
+
+
 //Tally up results for both candidates
 bernie.tallyUpResults();
 joe.tallyUpResults();
