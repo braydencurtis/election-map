@@ -1,8 +1,9 @@
-var makePolitician = function(name){
+var makePolitician = function(name, color){
     var politician = {};
     politician.name = name;
     politician.electionResults = null;
     politician.totalVotes = 0;
+    politician.stateColor = color;
 
     // politician.announcePolitician = function() {
     //     console.log(this.name + " got " + this.totalVotes + " votes!.");
@@ -22,9 +23,9 @@ var makePolitician = function(name){
     return politician;
 };
 // Create Bernie Sanders object
-var bernie = makePolitician("Bernie Sanders");
+var bernie = makePolitician("Bernie Sanders", [102, 217, 255]);
 // Create Joe Biden Object
-var joe = makePolitician("Joe Biden");
+var joe = makePolitician("Joe Biden", [0, 0, 255]);
 
 // Add vote totals to both candidates
 bernie.electionResults = [5,1,7,2,33,6,4,2,1,14,8,3,1,11,11,0,5,3,3,3,7,4,8,9,3,7,2,2,4,2,8,3,15,15,2,12,0,4,13,1,3,2,8,21,3,2,11,1,3,7,2];
@@ -48,7 +49,6 @@ joe.tallyUpResults();
 
 // Determine winner
 var winner = "";
-
 if (bernie.totalVotes > joe.totalVotes) {
     winner = bernie.name;
 } else if (bernie.totalVotes < joe.totalVotes) {
