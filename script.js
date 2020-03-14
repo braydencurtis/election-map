@@ -10,6 +10,15 @@ var makePolitician = function(name){
 
     // politician.announcePolitician();
 
+    // Add up total votes for politician object
+    politician.tallyUpResults = function() {
+    this.totalVotes = 0;
+
+    for(var i = 0; i < this.electionResults.length; i++) {
+        this.totalVotes = this.totalVotes + this.electionResults[i];
+    }
+}
+
     return politician;
 };
 // Create Bernie Sanders object
@@ -33,5 +42,24 @@ joe.electionResults[4] = 38;
 bernie.electionResults[43] = 11;
 joe.electionResults[43] = 27;
 
-console.log(bernie.electionResults);
-console.log(joe.electionResults);
+//Tally up results for both candidates
+bernie.tallyUpResults();
+joe.tallyUpResults();
+
+// Determine winner
+var winner = "";
+
+if (bernie.totalVotes > joe.totalVotes) {
+    winner = bernie.name;
+} else if (bernie.totalVotes < joe.totalVotes) {
+    winner = joe.name;
+} else {
+    winner = "Draw";
+};
+
+// Announce winner, unless it's a tie
+if (winner == "Draw") {
+    console.log("It's a tie! Time for a recount!");
+} else {
+    console.log("And the winner is... " + winner + "!");
+}
