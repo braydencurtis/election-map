@@ -51,6 +51,15 @@ var setStateResults = function(state) {
     } else if (joe.electionResults[state] > bernie.electionResults[state]) {
         theStates[state].winner = joe;
     }
+    
+    var stateWinner = theStates[state].winner;
+
+    // Assign state color to winner
+    if (stateWinner !== null) {
+        theStates[state].rgbColor = stateWinner.stateColor;
+    } else {
+        theStates[state].rgbColor = [11,32,57];
+    }
 }
 
 
