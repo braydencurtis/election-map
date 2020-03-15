@@ -51,7 +51,7 @@ var setStateResults = function(state) {
     } else if (joe.electionResults[state] > bernie.electionResults[state]) {
         theStates[state].winner = joe;
     }
-    
+
     var stateWinner = theStates[state].winner;
 
     // Assign state color to winner
@@ -83,3 +83,14 @@ if (winner == "Draw") {
 } else {
     console.log("And the winner is... " + winner + "!");
 }
+
+//Connect countryResults table to JavaScript
+var countryResults = document.getElementById("countryResults");
+
+//Replace table values with election results
+countryResults.children[0].children[0].children[0].innerText = bernie.name;
+countryResults.children[0].children[0].children[1].innerText = bernie.totalVotes;
+countryResults.children[0].children[0].children[2].innerText = joe.name;
+countryResults.children[0].children[0].children[3].innerText = joe.totalVotes;
+countryResults.children[0].children[0].children[5].innerText = winner;
+
