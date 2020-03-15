@@ -60,6 +60,18 @@ var setStateResults = function(state) {
     } else {
         theStates[state].rgbColor = [11,32,57];
     }
+
+    //Connect stateInfoTable table to Javascript
+    var stateInfoTable = document.getElementById("stateResults");
+    var header = stateInfoTable.children[0];
+    var body = stateInfoTable.children[1];
+    var stateName = header.children[0].children[0];
+    var stateAbbv = header.children[0].children[1];
+    var cand1Name = body.children[0].children[0];
+    var cand1Results = body.children[0].children[1];
+    var cand2Name = body.children[1].children[0];
+    var cand2Results = body.children[1].children[1];
+    var winnersName = body.children[2].children[1];
 }
 
 
