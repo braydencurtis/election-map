@@ -72,6 +72,19 @@ var setStateResults = function(state) {
     var cand2Name = body.children[1].children[0];
     var cand2Results = body.children[1].children[1];
     var winnersName = body.children[2].children[1];
+
+    //Replace text in stateResults table
+    stateName.innerText = theStates[state].nameFull;
+    stateAbbv.innerText = theStates[state].nameAbbrev;
+    cand1Name.innerText = bernie.name;
+    cand1Results.innerText = bernie.electionResults[state];
+    cand2Name.innerText = joe.name;
+    cand2Results.innerText = joe.electionResults[state];
+    winnersName.innerText = stateWinner.name;
+    
+
+
+
 }
 
 
